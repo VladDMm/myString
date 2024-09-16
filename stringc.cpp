@@ -110,7 +110,7 @@ bool operator>(const String & obj1, const String & obj2)
 }
 bool operator==(const String &obj1, const String &obj2)
 {
-	return (strcmp(obj1.str, obj2.str) == 0);
+	return !(strcmp(obj1.str, obj2.str));
 }
 //Functii friend pentru citire / scriere
 
@@ -127,7 +127,7 @@ std::istream &operator>>(std::istream &is, String &obj)
 	char temp[512]; //variabila temporara pentru salvarea sirului
 	is >> temp;
 
-	if (obj.str != nullptr) // Daca nu e nullptr sa se stearga str
+	if (obj.str != nullptr)
 		delete[]obj.str;
 
 	obj.len = strlen(temp);

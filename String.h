@@ -7,7 +7,7 @@
 class String
 {
 public:
-	String() : str(nullptr), len(0) {};//Constructor implicit
+	String() : str(nullptr), len(0) {};	//Constructor implicit
 	String(const char *st); //Constructor de creare prin initializare
 	String(const String &); // Constructor copiere
 	String &operator=(const String &obj); // Supraincarcarea op= de atriubuire un sir altui
@@ -16,9 +16,13 @@ public:
 	friend String operator+(const char *st, String &obj);
 	String operator+=(const char *st); // Supraincarcare op+= pentru sir
 	String operator+=(const String &obj); //Supraincarcare op+= pentru obiect
+
+	// functii friend pentru comparare
+
 	friend bool operator<(const String &obj1, const String &obj2);
 	friend bool operator>(const String &obj1, const String &obj2);
 	friend bool operator==(const String &obj1, const String &obj2);
+	
 	// functii friend pentru operatorii >> && <<
 	
 	friend std::ostream &operator<<(std::ostream &os,const String &obj); // functie de afisare
